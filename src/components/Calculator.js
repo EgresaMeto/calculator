@@ -21,6 +21,7 @@ const Calculator = () => {
     }
     const buttonsProps = [
       {
+
         className: "point",
         onClick: clear,
         id: "clear",
@@ -110,6 +111,7 @@ const Calculator = () => {
         className: "point",
         onClick: calculate,
         id: "result", name: "="
+
       },
 
     ]
@@ -119,6 +121,7 @@ const Calculator = () => {
         <div className="container">
         <input type="text" value={result} />
           <div className="keypad">
+
           {
           buttonsProps.map(element => (
             <Button
@@ -131,6 +134,7 @@ const Calculator = () => {
         }
   </div>
   </div>
+
   
         </>
     );
