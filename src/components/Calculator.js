@@ -1,38 +1,111 @@
 
 import React, { useState } from 'react';
 import './Calculator.css';
+import Button from "./Button";
 
 const Calculator = () => {
     const [result, setResult] = useState("");
     const handleClick = (e) => {
       setResult(result.concat(e.target.name));
-  
     }
   
     const clear = () => {
       setResult("");
-  
     }
   
     const backspace = () => {
       setResult(result.slice(0, result.length -1));
-      
     }
     const calculate = () => {
-  
       setResult(eval(result).toString());
     }
+    const buttonsProps = [
+      {
+        className: "",
+        onClick: clear,
+        id: "",
+        name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },{
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },{
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },{
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },{
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+      {
+        className: "",
+        onClick: clear,
+        id: "", name: ""
+      },
+
+    ]
   
   return (
       <>
         <div className="container">
-        
         <input type="text" value={result} />
-          
-     
           <div className="keypad">
-            
-            <button  className="point" onClick={clear} id="clear">Clear</button>
+            <Button  className="point" handleClick={clear} id="clear" name="clear" />
             <button className="point" onClick={backspace} id="backspace">C</button>
             <button className="point" name="/" onClick={handleClick}>&divide;</button>
             <button name="7" onClick={handleClick}>7</button>
@@ -50,8 +123,6 @@ const Calculator = () => {
             <button name="0" onClick={handleClick}>0</button>
             <button name="." onClick={handleClick}>.</button>
             <button className="point"name="=" onClick={calculate} id="result">=</button>
-  
-         
         </div>
   
         </div>
