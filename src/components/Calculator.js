@@ -5,7 +5,9 @@ import Button from "./Button";
 
 const Calculator = () => {
     const [result, setResult] = useState("");
+
     const handleClick = (e) => {
+      debugger
       setResult(result.concat(e.target.name));
     }
   
@@ -44,7 +46,7 @@ const Calculator = () => {
       },
       {
         className: "",
-        onClick:handleClick ,
+        onClick: handleClick ,
         id: "", name: "8"
       },
       {
@@ -69,7 +71,7 @@ const Calculator = () => {
       },
       {
         className: "",
-        onClick: handleClick,
+        onClick: ()=>handleClick(),
         id: "", name: "6"
       },
       {
@@ -125,10 +127,10 @@ const Calculator = () => {
           {
           buttonsProps.map(element => (
             <Button
-            name={element.name}
-            handleCLick = {()=> element.handleClick(0)}
-            className = { element.className }
-            id={element.id}
+              name={element.name}
+              handleClick = {(e)=> element.onClick(e)}
+              className = { element.className }
+              id={element.id}
             />
             ))
         }
